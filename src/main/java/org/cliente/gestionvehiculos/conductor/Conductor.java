@@ -1,6 +1,10 @@
 package org.cliente.gestionvehiculos.conductor;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
 public class Conductor {
@@ -23,6 +27,10 @@ public class Conductor {
 
     @Column(nullable = false)
     private Integer anyosCarnet;
+
+    @OneToMany(mappedBy = "conductor")
+    private List<Conductor> conductors = new ArrayList<>();
+
 
 
     public Conductor() {
