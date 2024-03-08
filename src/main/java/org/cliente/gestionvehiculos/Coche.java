@@ -1,13 +1,9 @@
 package org.cliente.gestionvehiculos;
 
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Coche {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +19,7 @@ public class Coche {
     @Column(nullable = false)
     private String tipoVehiculo;
     @OneToMany(mappedBy = "coche")
-    private List<Servicios> serviciosList;
+    private List<Servicio> servicioList;
 
 
 
@@ -75,11 +71,11 @@ public class Coche {
         this.tipoVehiculo = tipoVehiculo;
     }
 
-    public List<Servicios> getServiciosList() {
-        return serviciosList;
+    public List<Servicio> getServicioList() {
+        return servicioList;
     }
 
-    public void setServiciosList(List<Servicios> serviciosList) {
-        this.serviciosList = serviciosList;
+    public void setServicioList(List<Servicio> serviciosList) {
+        this.servicioList = servicioList;
     }
 }
