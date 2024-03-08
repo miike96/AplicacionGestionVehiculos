@@ -1,0 +1,30 @@
+-- Tabla Conductor
+CREATE TABLE Conductor (
+    idConductor SERIAL PRIMARY KEY,
+    nombre VARCHAR(50),
+    apellido1 VARCHAR(50),
+    apellido2 VARCHAR(50),
+    tipoCarnet VARCHAR(1),
+    anyosCarnet INT
+);
+
+-- Tabla Coche
+CREATE TABLE Coche (
+    matricula VARCHAR(7) PRIMARY KEY,
+    marca VARCHAR(50),
+    kilometraje FLOAT,
+    modelo VARCHAR(50),
+    tipoVehiculo VARCHAR(50)
+);
+
+-- Tabla Servicio
+CREATE TABLE Servicio (
+    idServicio SERIAL PRIMARY KEY,
+    fechaInicio DATE,
+    fechaFin DATE,
+    kilometraje FLOAT,
+    costeServicio FLOAT,
+    finalizado BOOLEAN,
+    idConductor INT REFERENCES Conductor(idConductor),
+    matricula VARCHAR(7) REFERENCES Coche(matricula) 
+);

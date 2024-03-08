@@ -1,0 +1,37 @@
+-- Inserciones en la tabla Conductor
+INSERT INTO Conductor (nombre, apellido1, apellido2, tipoCarnet, anyosCarnet)
+VALUES
+    ('Juan', 'García', 'López', 'A', 5),
+    ('María', 'Martínez', 'Ruiz', 'B', 3),
+    ('José', 'López', 'Fernández', 'C', 8),
+    ('Ana', 'Gómez', 'Sánchez', 'B', 4),
+    ('Carlos', 'Rodríguez', 'Jiménez', 'A', 6),
+    ('Elena', 'Pérez', 'Gutiérrez', 'D', 2),
+    ('Miguel', 'Fernández', 'Moreno', 'C', 7);
+
+-- Inserciones en la tabla Coche
+INSERT INTO Coche (matricula, marca, kilometraje, modelo, tipoVehiculo)
+VALUES
+    ('1234ABC', 'Seat', 50000, 'Ibiza', 'Compacto'),
+    ('5678DEF', 'Renault', 60000, 'Clio', 'Compacto'),
+    ('9012GHI', 'Ford', 75000, 'Focus', 'Sedán'),
+    ('3456JKL', 'Volkswagen', 80000, 'Golf', 'Compacto'),
+    ('7890MNO', 'Peugeot', 55000, '208', 'Compacto'),
+    ('2345PQR', 'Opel', 70000, 'Corsa', 'Compacto'),
+    ('6789STU', 'Toyota', 65000, 'Corolla', 'Sedán');
+
+-- Inserciones adicionales en la tabla Servicio
+INSERT INTO Servicio (fechaInicio, fechaFin, kilometraje, costeServicio, finalizado, idConductor, matricula)
+VALUES
+    ('2024-03-13', '2024-03-18', 70000, 110.5, true, 3, '9012GHI'),
+    ('2024-03-16', '2024-03-21', 75000, 95.8, false, 4, '3456JKL'),
+    ('2024-03-18', '2024-03-23', 80000, 120.2, true, 5, '7890MNO'),
+    ('2024-03-21', '2024-03-26', 65000, 85.3, false, 6, '2345PQR'),
+    ('2024-03-23', '2024-03-28', 70000, 125.7, true, 7, '6789STU'),
+    ('2024-03-26', '2024-03-31', 75000, 105.0, false, 1, '1234ABC'),
+    ('2024-03-28', '2024-04-02', 60000, 130.9, true, 2, '5678DEF'),
+    ('2024-03-31', '2024-04-05', 55000, 115.4, false, 1, '1234ABC'),
+    ('2024-04-02', '2024-04-07', 60000, 95.7, true, 2, '5678DEF'),
+    ('2024-04-05', '2024-04-10', 65000, 110.5, true, 3, '9012GHI'),
+    ('2024-04-07', '2024-04-12', 70000, 95.8, false, 4, '3456JKL'),
+    ('2024-04-10', '2024-04-15', 80000, 120.2, true, 5, '7890MNO');
